@@ -20,9 +20,9 @@
                 position: fixed;
                 background-color: #e4e2dd;
                 padding: 10px;
-                height: 65px;
+                height: 60px;
                 width: 100%;
-                z-index: 2;
+                z-index: 1000;
             }
 
             #dropdown-icon{
@@ -40,7 +40,7 @@
 
             #home-img {
                 position: relative;
-                top: 10px;
+                top: 3px;
                 height: 66px;
                 width: 60px;
             }
@@ -82,6 +82,7 @@
             }
 
             .dropdown-content {
+                overflow: auto;
                 display: none;
                 position: absolute;
                 background-color: #f1f1f1;
@@ -105,21 +106,103 @@
             }
 
             .sep {
-                height: 70px;
+                height: 25px;
             }
 
             .highlight {
                 background-color: yellow;
             }
 
+            p{
+                width: 90%;
+                position: relative;
+                left: 5%;
+            }
+
+            h2 {
+                position: relative;
+                top: 2%;
+                left: 3%;
+            }
+
             body {
                 margin: 0.5px;
+                height: 2000px;
             }
             
+            @media (max-width: 600px) {
+                nav {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background-color: #e4e2dd;
+                    z-index: 1000;
+                }
+
+                #dropdown-icon {
+                    padding-left: 5px;
+                    border: 1px;
+                    box-sizing: content-box;
+                }
+
+                #dropdown-img {
+                    position: relative;
+                    top: 12px;
+                    height: 30px;
+                    width: 40px;
+                }
+
+                #home-img {
+                    position: relative;
+                    top: -61px;
+                    left: -25px;
+                    height: 50px;
+                    width: 40px;
+                }
+
+                #home-icon {
+                    position: relative;
+                    top: 30px;
+                    left: 70px;
+                }
+
+                .logo {
+                    padding-top: 0px;
+                    position: fixed;
+                    left: 45%;
+                    top: 1%
+                }
+
+                .logo img {
+                    position: relative;
+                    left: -45px;
+                    height: 70px;
+                    width: 110px;
+                }
+
+                .search-container {
+                    position: fixed;
+                    top: 5%;
+                    right: 5%;
+                }
+
+                .search-container input {
+                    width: 85px;
+                }
+            }
+
             #main {
                 position: fixed;
 
                 /* padding-top: 100px; */
+            }
+
+            html{
+                width:100%;
+                height: 100%;
+                background-color: #fffdd0
+                ;
             }
         </style>
     </head>
@@ -130,18 +213,30 @@
                 <img src="pngwing.com.png" id="dropdown-img" onclick="openDropdown('dropdown')">
             </div>
             <div id="dropdown" class="dropdown-content">
-                <a href="#sep1" onclick="openDropdown('dropdown')">An-annong caused by spirits</a>
-                <a href="#sep2" onclick="openDropdown('dropdown')">An-annong caused by the Criticism of People</a>
-                <a href="#sep3" onclick="openDropdown('dropdown')">An-annong based on physical pain</a>
-                <a href="#sep4" onclick="openDropdown('dropdown')">An-annong due to the sickness of the dead</a>
-                <a href="#sep5" onclick="openDropdown('dropdown')">Knowledge through the rituals of the Magtatako (healer)</a>
-                <a href="#sep6" onclick="openDropdown('dropdown')">Using Medicinal Plant as Cure</a>
-                <a href="#sep3" onclick="openDropdown('dropdown')">Healing through Prayers and Rituals</a>
-                <a href="#sep8" onclick="openDropdown('dropdown')">Treatment through massage</a>
-                <a href="#sep9" onclick="openDropdown('dropdown')">Saying “Tabi-tabi”</a>
-                <a href="#sep10" onclick="openDropdown('dropdown')">Offering food for the Dead</a>
-                <a href="#sep11" onclick="openDropdown('dropdown')">Belief in Possible Death caused by An-annong</a>
-                <a href="#sep12" onclick="openDropdown('dropdown')">There is no belief that it is possible for a person to die because of An-annong</a>
+                <a href="#sep1" onclick="openDropdown('dropdown', 'section1')">An-annong dahil sa Kaluluwa</a>
+                <a href="#sep2" onclick="openDropdown('dropdown', 'section2')">An-annong sanhi ng Pagpansin o Pamumuna ng mga Buhay</a>
+                <a href="#sep3" onclick="openDropdown('dropdown', 'section3')">An-annong batay sa Pisikal na Nararamdaman</a>
+                <a href="#sep4" onclick="openDropdown('dropdown', 'section4')">An-annong Bilang Sakit ng Namatay</a>
+                <a href="#sep5" onclick="openDropdown('dropdown', 'section5')">Nalalaman sa Pamamagitan ng mga Ritwal ng mga Magtatako</a>
+                <a href="#sep6" onclick="openDropdown('dropdown', 'section6')">Lunas Gamit ang mga Halamang Gamot</a>
+                <a href="#sep7" onclick="openDropdown('dropdown', 'section7')">Paggamot Gamit ang Ritual at Dasal</a>
+                <a href="#sep8" onclick="openDropdown('dropdown', 'section8')">Paggamot Gamit ang Pagpapahid at Pagpisil sa Katawan</a>
+                <a href="#sep9" onclick="openDropdown('dropdown', 'section9')">Pagsasabi ng “Tabi-tabi”</a>
+                <a href="#sep10" onclick="openDropdown('dropdown', 'section10')">Pagsasabi ng “Tabi-tabi”</a>
+                <a href="#sep11" onclick="openDropdown('dropdown', 'section11')">Mayroong Paniniwalang Posibleng Mamatay ang Isang Tao dahil sa An-annong</a>
+                <a href="#sep12" onclick="openDropdown('dropdown', 'section12')">Walang Paniniwalang Posibleng Mamatay ang Isang Tao dahil sa An-annong</a>
+                <a href="#sep13" onclick="openDropdown('dropdown', 'section13')">An-annong caused by spirits</a>
+                <a href="#sep14" onclick="openDropdown('dropdown', 'section14')">An-annong caused by the Criticism of People</a>
+                <a href="#sep15" onclick="openDropdown('dropdown', 'section15')">An-annong based on physical pain</a>
+                <a href="#sep16" onclick="openDropdown('dropdown', 'section16')">An-annong due to the sickness of the dead</a>
+                <a href="#sep17" onclick="openDropdown('dropdown', 'section17')">Knowledge through the rituals of the Magtatako (healer)</a>
+                <a href="#sep18" onclick="openDropdown('dropdown', 'section18')">Using Medicinal Plant as Cure</a>
+                <a href="#sep19" onclick="openDropdown('dropdown', 'section19')">Healing through Prayers and Rituals</a>
+                <a href="#sep20" onclick="openDropdown('dropdown', 'section20')">Treatment through massage</a>
+                <a href="#sep21" onclick="openDropdown('dropdown', 'section21')">Saying “Tabi-tabi”</a>
+                <a href="#sep22" onclick="openDropdown('dropdown', 'section22')">Offering food for the Dead</a>
+                <a href="#sep23" onclick="openDropdown('dropdown', 'section23')">Belief in Possible Death caused by An-annong</a>
+                <a href="#sep24" onclick="openDropdown('dropdown', 'section24')">There is no belief that it is possible for a person to die because of An-annong</a>
             </div>
             <!-- <button class="home-btn" onclick="goHome()">Home</button> -->
             <div id="home-icon">
@@ -164,6 +259,152 @@
 
             </div>
             <section id="section1">
+                <h2>An-annong dahil sa Kaluluwa</h2>
+                <!-- Content here -->
+                <p>
+                    Karamihan sa mga kalahok na nainterbyu ang nagsabing nararanasan ang An-annong dahil sa mga kaluluwang nagpaparamdam sa mga nabubuhay. Posibleng makaranas ng An-annong ang isang tao kahit hindi nito kakilala o kaano-ano ang kaluluwang nagpaparamdam. Ito ay sinusuportahan ng nailagdang libro ni Apostol (2010) na nagsasabing nararanasan ang An-annong pagkatapos ng isang engkwentro sa espiritu ng isang patay na tao.
+
+	Maaring magparamdam ang kaluluwa ng patay sa isang tao kapag bumisita sa bahay ng nasabing kaluluwa. Ang mga kaluluwang ito ay sinasabing mayroong pangangailan o kaya naman ay naisturbo. Mayroon ding mga kaluluwa na nakakadulot ng An-annong dahil ginalit sila ng buhay o natipuhan nila ang isang tao. Pinaniniwalaan ng mga Ilocano na ang kaluluwa ay babalik sa lupain ng mga nabubuhay pagkatapos ng 9 na araw na paggising at dapat na tanggapin muli sa mga pagkakataon kapag ang namatay ay lumitaw sa isang panaginip o kapag ang isang miyembro ng pamilya ay biglang nakaranas ng hindi maipaliwanag na sakit (National Museum of the Philippines, 2021). Ayon sa paniniwala ng mga Filipino, hindi lamang ng mga Ilocano, ang malamig na hangin na biglaang darating ay isang pahiwatig na ang kaluluwa ng patay ay na dumadalaw. Kapag ito ay naranasan, madalas na nakakaramdam ang tao ng panlalamig sa katawan kasama ng kaba o kilabot (De Leon, 2023). Ang pambubulabog ng mga kaluluwa sa mga nabubuhay ay nagiging sanhi ng pagkakaramdam ng iba't - ibang karamdaman sa katawan, panlalamig, o pagkahilo man iyan.
+                </p>
+            </section>
+
+            <div class="sep", id="sep2">
+
+            </div>
+
+            <section id="section2">
+                <h2>An-annong sanhi ng Pagpansin o Pamumuna ng mga Buhay</h2>
+                <!-- Content here -->
+                <p>
+                    Isa rin ang pamumuna ng tao sa tinutukoy na sanhi ng An-annong. Ayon sa mga manggagamot ng An-annong, kadalasan na ang mga bata o sanggol ang nakakaranas nito. Katulad din sa ibang rehiyon, ang An-annong ay tinatawag ding usog o bati, na nangangahulugang nakakadulot ng sakit kapag nabati ng ibang tao (Espiritu, 2022). 
+
+Ayon sa isang mantatako na nakapanayam,  mas delikado ang An-annong sa buhay kesa sa patay o kaluluwa sapagkat ang tao ay maaaring magkasakit, mahimatay at pumayat. Ang An-annong o usog ay maaaring anuman mula sa pananakit ng tiyan hanggang sa matinding lagnat, lalo na ang mga sanggol ay mahina dito (Limos, 2020).
+                </p>
+            </section>
+
+            <div class="sep", id="sep3">
+
+            </div>
+
+            <section id="section3">
+                <h2>An-annong batay sa Pisikal na Nararamdaman</h2>
+                <!-- Content here -->
+                <p>
+                    Karamihan sa mga kalahok ng interbyu ay nakaranas ng mga pisikal na nararamdaman, mula sa pananakit ng ulo at tiyan hanggang sa pagkakaroon ng lagnat bilang sintomas ng An-annong. Ito ay kagaya ng karanasan ni Harold McArthur Jr. noong 1973 sa isang liblib na lugar sa Ilocos Norte kung saan siya ay nahihilo at nasusuka sa hindi maipaliwanag na dahilan. Ang ibang tao ay mabilis na nagpasya na siya ay nagdurusa sa An-annong.
+                </p>
+            </section>
+
+            <div class="sep", id="sep4">
+
+            </div>
+
+            <section id="section4">
+                <h2>An-annong Bilang Sakit ng Namatay</h2>
+                <p>
+                    Meron ding mga kaso ng mga taong may An-annong na kung saan ang kanilang nararamdaman ay katulad ng dating iniindang sakit ng namatay. Ito ay naaayon sa paniniwala ng mga Ilokano na ang mga kaluluwa ng mga namatay ang siyang dahilan sa mga pagkakataon kapag ang isang miyembro ng pamilya ay biglang nakaranas ng hindi maipaliwanag na sakit (National Museum of the Philippines, 2021). 
+
+Kapag ang yumao na nagparamdam ay pumanaw dahil sa sakit sa puso, maaaring ang taong naapektuhan ay makaranas ng pananakit sa dibdib. Kung ang yumao naman ay pumanaw dahil sa sakit sa atay o bato, maaaring ang taong naapektuhan ay makaranas ng pananakit sa tiyan. Ganoon din ang eksplanasyon para sa ibang parte ng katawan. Ang mga dulot na sakit ng An-annong ay ang paraan ng mga kaluluwa na magparamdam sa tao, pagpapasa ng kanilang ininda sa mga nabubuhay pa. 
+                </p>
+            </section>
+
+            <div class="sep", id="sep5">
+
+            </div>
+
+            <section id="section5">
+                <h2>Nalalaman sa Pamamagitan ng mga Ritwal ng mga Magtatako</h2>
+                <p>
+                    Sa pamamagitan ng mga ritwal ng mga magtatako ay nalalaman din kapag mayroong An-annong ang isang tao. Iba’t ibang ritwal ang isinasagawa upang malaman kung may An-annong ang isang tao. Iba-iba rin ang kanilang ginagamit na instrumento sa ritwal upang matuklasan na An-annong nga ang dahilan ng kanilang iniinda o nararanasan. 
+
+Ang paggamit ng bigas ay karaniwang ginagamit ng mga agtaktako o nanggagamot sa mga ritwal upang malaman na ang isang tao ay nakakaranas ng An-annong. Ang mga magtaktako ay naghuhulog ng bigas sa isang maliit na batya habang bumubulong ng maikling panalangin. Maaari ring ilagay ang bigas sa palanggana na mayroong tubig. Kapag ang ilan sa mga butil ng bigas ay nakatayo o nakakrus, dito masasabi na ang isang tao ay nakakaranas ng An-annong (Loren, n.d.). Mayroon din ibang manggagamot ang gumagamit ng itlog bilang instrumento kasama ng mga binubulong nilang panalangin. Ang itlog na buo ay inilalagay sa isang batya na may lamang tubig upang malaman na nakakaranas ng An-annong ang isang tao. Kapag ang itlog ay bumuo ng isang hugis o pigura, masasabing ang isang tao ay nakakaranas ng An-annong.
+                </p>
+            </section>
+
+            <div class="sep", id="sep6">
+
+            </div>
+
+            <section id="section6">
+                <h2>Lunas Gamit ang mga Halamang Gamot</h2>
+                <p>
+                    Ayon sa mga manggagamot o agtaktako na nakapanayam, ang paggamit ng mga halamang gamot ay nakatutulong sa paggamot ng mga naan-annongan. Karaniwang ginagamit ang dahon ng atis, guyabano, atsuete, andadasi, kalamansi, bayabas, at malunggay upang malunasan ang An-annong. Nakalulunas ang mga ito sa pamamagitan ng paghahampas o pagpapaligo ng dahon sa naan-annongan. Ginagamit din ang mga gulay at halaman tulad ng luya, bigas, at dahon ng malunggay upang makaiwas sa An-annong. Ang mga iba’t ibang uri ng gulay at halaman kagaya ng mga ito ay ginagamit bilang anting-anting, mga mahiwagang bagay na pinaniniwalaang nagbibigay proteksyon, upang makaiwas sa An-annong (Anting Anting | Magic Objects by Michael Arcega | University of San Francisco, n.d.).
+                </p>
+            </section>
+
+            <div class="sep", id="sep7">
+
+            </div>
+
+            <section id="section7">
+                <h2>Paggamot Gamit ang Ritual at Dasal</h2>
+                <p>
+                    Mayroon ding pamamaraan ng paggamot ng An-annong sa pamamagitan ng mga ritwal at dasal. Ang pagsasaboy ng bigas sa paligid ng bahay ay nakakatulong upang mawala ang nararamdaman ng naan-annongan.  Nagbahagi ang mga agtatako na ginagamit rin nila ang kanilang paniniwala sa Diyos upang makagamot ng tao. “Apo tulungan nak tapno makatulong nak ti kasapulan ti tulong mo, babaen ti pammatik kenka, tulungan nak, awagak ti nagan na”, isa ito sa mga dasal na kanilang ginagamit upang makatulong sa paggamot ng mga naan-annongan. 
+                </p>
+            </section>
+
+            <div class="sep", id="sep8">
+
+            </div>
+
+            <section id="section8">
+                <h2>Paggamot Gamit ang Pagpapahid at Pagpisil sa Katawan</h2>
+                <p>
+                    Isang pamamaraan pa na nakakaalis ng An-annong ayon sa mga kalahok sa interbyu ay ang pagpapahid sa parte ng katawan. Ang pagpahid ng laway at paglalagay ng krus sa tiyan at noo ng taong apektado ay nakakatulong upang maalis ang nararamdaman. Sa mga tradisyonal na pamilyang Pilipino, hihilingin sa bisita na pahiran ng laway sa noo o tiyan ng sanggol upang maalis ang nararamdaman ng isang sanggol kapag nausog (Martinez et al., 2019).
+
+Dagdag pa rito, karamihan sa mga kalahok ang nagsabing ang agpapekkel o pagpapapisil sa katawan ay paraan din upang maalis ang An-annong. Upang tumalab ito, kinakailangang ang agpekkel sa naapektuhan ay ang kapamilya o kamag-anak na nag-alaga sa yumao. Maaari ring ang taong huling nakakita sa patay bago ito yumao ang gagawa nito. Ginagamit din ang dating gamit ng patay sa pagpekpekkel, partikular na ang kanilang mga damit.
+
+Mararahil dito, kadalasang nakikita sa mga pagtitipong Ilokano ang mga sanggol na pinepekkelan ng mga kapamilya at maging ng mga bisita. Kadalasan ring sinasabayan ito ng pagsasabing “Puwera usog!” na ang ibig sabihin ay pagsalanta sa usog.
+                </p>
+            </section>
+
+            <div class="sep", id="sep9">
+
+            </div>
+
+            <section id="section9">
+                <h2>Pagsasabi ng “Tabi-tabi”</h2>
+                <p>
+                    Isa sa mga paraan na ginagawa ng mga tao upang makaiwas sa pagkakaroon ng An-annong ay ang pagsasabi ng “Tabi-tabi”. Ito ay isang paraan ng pagsasabi ng “excuse me” o “paumanhin” sa takot na ang mga espiritu ay maaaring magdulot sa kanila ng sakit, lagnat, pantal o iba pang karamdaman kung sila ay hindi kinilala o binibigyan ng paggalang. Ayon sa paniniwala ng mga Ilocano, maaring gumamit ng “Tabi-tabi po” bagama’t ang kasabihan ay “kayu kayu”. Maaari ring gamitin ang "bari bari" kung hinihiling mo sa espiritu ng isang patay na iligtas ka mula sa paunawa. Normal din ang walang na ipahayag sa walang sinuman ang "magmagná, apo!".(Clark, 2022) Kung sakaling nakaligtaan ang mga paraan ng pagsabi ng “excuse me” o “paumanhin” maari itong nagresulta sa An-annong. Maaaring ikagalit ng mga pinaniniwalaang espiritu at gantihan ang mga tao, kahit pumunta sa mga ospital ay hindi gumagaling ang mga karamdaman. Dapat humingi ng pahintulot sa pamamagitan ng pagkilala sa kanila, ang oral na ritwal ay nagpapatibay sa kasunduang paggalang at pananagutan.
+                </p>
+            </section>
+
+            <div class="sep", id="sep10">
+
+            </div>
+
+            <section id="section10">
+                <h2>Pagbibigay Alay sa mga Patay</h2>
+                <p>
+                    Isa ring paraan na ginagawa ay ang pag-aalay sa mga patay. Ang atang o alay ay ginagawa bilang isang ritwal ng pagpapatahimik para sa namatay na maaaring nasaktan o nabalisa (National Museum of the Philippines, 2021). Ang ritwal ay malalim na nauugnay sa paniniwala ng mga Ilokano sa mga espiritu at ang pangangailangan na patahimikin sila kapag sila ay nababagabag o nasaktan (Corpuz, 2020).    
+                </p>
+            </section>
+
+            <div class="sep", id="sep11">
+
+            </div>
+
+            <section id="section11">
+                <h2>Mayroong Paniniwalang Posibleng Mamatay ang Isang Tao dahil sa An-annong</h2>
+                <p>
+                    Mayroon ding mga kalahok ng interbyu na naniniwalang maaaring pumanaw ang isang tao dahil sa An-annong. Sinasabing kapag ang isang tao ay nausog o nabati, ito ay agad dinadapuan ng masamang pakiramdam. Kung matindi ang An-annong ay maaring humantong sa kamatayan kung hindi naagapan (Abante Tonite, n.d.) sapagkat lalong nanghihina ang naan-annongan. Mararahil dito rin ay nagmula ang mga manggagamot, agtaktako sa Ilocano, na umaagap sa mga sakit ng mga naan-annongan sa kadahilanang nais ng mga taong maiwasan na umabot sa kamatayan ang naturingang An-annong.
+                </p>
+            </section>
+
+            <div class="sep", id="sep12">
+
+            </div>
+
+            <section id="section12">
+                <h2>Walang Paniniwalang Posibleng Mamatay ang Isang Tao dahil sa An-annong</h2>
+                <p>
+                    Walang paniniwala na ito ay nakakamatay ngunit ikaw ay manghihina at makakaramdam ng sakit. Ang karamdamang ito ay maaaring magdulot ng pananakit ng tiyan hanggang sa matinding lagnat. Ang sakit na ito ay kadalasang nalulunasan sa pamamagitan ng malumanay na paghagupit sa taong dinapuan ng dahon ng malunggay at guyabano. Sa mga kaso na kinasasangkutan ng mga sanggol, ang taong sanhi ng usog ay hinahanap at sinabihan na pahiran ang kanyang laway na parang gamot sa noo o tiyan ng bata. Kapag may karamdaman ka, bigla kang mahihilo at nanginginig o biglang sumakit ang tiyan mo. Masisira ang 'spell' sa pamamagitan ng pagkontra nito. Kadalasan, ang hindi maipaliwanag na may sakit ay bumangon kaagad pagkatapos, na parang walang nangyari at nararamdaman na sakit (Odon, 2015). Makakaramdam ng panghihina at sakit  ang isang tao ngunit hindi ito posibleng humantong sa kamatayan sapagkat maraming paraan ang maaring lunas sa An-annong.
+                </p>
+            </section>
+
+            <div class="sep", id="sep13">
+
+            </div>
+            <section id="section13">
                 <h2>An-annong caused by spirits</h2>
                 <!-- Content here -->
                 <p>
@@ -174,11 +415,11 @@ The soul of the dead can cause someone to feel strange when visiting the said so
                 </p>
             </section>
 
-            <div class="sep", id="sep2">
+            <div class="sep", id="sep14">
 
             </div>
 
-            <section id="section2">
+            <section id="section14">
                 <h2>An-annong caused by the Criticism of People</h2>
                 <!-- Content here -->
                 <p>
@@ -188,11 +429,11 @@ According to a mantatako (healer) who was interviewed, the An-annong is more dan
                 </p>
             </section>
 
-            <div class="sep", id="sep3">
+            <div class="sep", id="sep15">
 
             </div>
 
-            <section id="section3">
+            <section id="section15">
                 <h2>An-annong based on physical pain</h2>
                 <!-- Content here -->
                 <p>
@@ -200,99 +441,99 @@ According to a mantatako (healer) who was interviewed, the An-annong is more dan
                 </p>
             </section>
 
-            <div class="sep", id="sep4">
+            <div class="sep", id="sep16">
 
             </div>
 
-            <section id="section4">
+            <section id="section16">
                 <h2>An-annong due to the sickness of the dead</h2>
                 <p>
                     There are some people who experienced a case of An-annong wherein their symptoms are the same with the disease of the dead person. This is in line with the belief of Ilocanos that the soul of the dead is the reason why a member of the family suddenly becomes sick with a disease with no identifiable cause (National Museum of the Philippines, 2021).
                 </p>
             </section>
 
-            <div class="sep", id="sep5">
+            <div class="sep", id="sep17">
 
             </div>
 
-            <section id="section5">
+            <section id="section17">
                 <h2>Knowledge through the rituals of the Magtatako (healer)</h2>
                 <p>
                     It can also be known that a person has An-annong through the rituals of magtatakos (healers). Different rituals are performed to find out if a person has An-annong. Some use rice, and others use basins, and prayers.
                 </p>
             </section>
 
-            <div class="sep", id="sep6">
+            <div class="sep", id="sep18">
 
             </div>
 
-            <section id="section6">
+            <section id="section18">
                 <h2>Using Medicinal Plant as Cure</h2>
                 <p>
                     According to the healers or agtaktako that were interviewed, the use of medicinal plants is helpful in treating a person who is suffering with An-annong. The leaves of atis (Sugar Apple), guyabano (Soursop), atsuete (Annatto), andadasi (ringworm bush), lime, guava, and horseradish are commonly used to treat An-annong. These are used by hitting or bathing the person who is suffering from An-annong.
                 </p>
             </section>
 
-            <div class="sep", id="sep7">
+            <div class="sep", id="sep19">
 
             </div>
 
-            <section id="section7">
+            <section id="section19">
                 <h2>Healing through Prayers and Rituals</h2>
                 <p>
                     There is also a method in treating An-annong through rituals and prayers. Scattering rice around the house helps to get rid of the feeling of naan-annongan. The healers shared that they also use their belief in God to heal people. “Apo tulungan nak tapno makatulong nak ti kasapulan ti tulong mo, babaen ti pammatik kenka, tulungan nak, awagak ti nagan na,” which translates to God help me in order for me to help those in need, with my faith on you, help me, is one of the prayers the healers use to help those who experience An-annong.           
                 </p>
             </section>
 
-            <div class="sep", id="sep8">
+            <div class="sep", id="sep20">
 
             </div>
 
-            <section id="section8">
+            <section id="section20">
                 <h2>Treatment through massage</h2>
                 <p>
                     Another method to treat An-annong according to the participants of the interviews is to massage the body. The wiping of saliva and signing of a cross on the affected person's stomach and forehead helps to remedy the symptoms. In traditional Filipino families, the visitor will be asked to smear saliva on the baby's forehead or belly to remove the feeling that a baby feels when it has An-annong (Martinez et al., 2019). In addition, most of the participants said that pagpekpekkel or massaging the body is also a way to get rid of An-annong. For this to happen, the one who will massage the affected person must be the family member or relative who took care of the deceased. It can also be done by the person who last saw the dead before they passed away. The old clothes of the dead are also used in pagpekkel.
                 </p>
             </section>
 
-            <div class="sep", id="sep9">
+            <div class="sep", id="sep21">
 
             </div>
 
-            <section id="section9">
+            <section id="section21">
                 <h2>Saying “Tabi-tabi”</h2>
                 <p>
                     One of the ways that people do in order to avoid experiencing An-annong is to say "tabi-tabi". It is a way of saying "excuse me" or "I'm sorry" in fear that the spirits may cause them pain, fever, rash or other ailments if they are not recognized or given respect (Clark, 2022).
                 </p>
             </section>
 
-            <div class="sep", id="sep10">
+            <div class="sep", id="sep22">
 
             </div>
 
-            <section id="section10">
+            <section id="section22">
                 <h2>Offering food for the Dead </h2>
                 <p>
                     Another method that is done to prevent experiencing An-annong is offering to the dead. The atang or alay is performed as a pacification ritual for the deceased who may have been hurt or upset (National Museum of the Philippines, 2021). The ritual is deeply related to the Ilocano people's belief in spirits and the need to appease them when they are disturbed or hurt (Corpuz, 2020).
                 </p>
             </section>
 
-            <div class="sep", id="sep11">
+            <div class="sep", id="sep23">
 
             </div>
 
-            <section id="section11">
+            <section id="section23">
                 <h2>Belief in Possible Death caused by An-annong</h2>
                 <p>
                     Most of the interview participants believe that a person can pass away because of An-annong. It is said that when a person experiences usog or bati, he or she is immediately affected by an ailment. When An-annong is severe, it can lead to death if not treated early (Abante Tonite, n.d.).
                 </p>
             </section>
 
-            <div class="sep", id="sep12">
+            <div class="sep", id="sep24">
 
             </div>
 
-            <section id="section12">
+            <section id="section24">
                 <h2>There is no belief that it is possible for a person to die because of An-annong</h2>
                 <p>
                     It is not believed to be fatal but you will feel weak and sick. This illness can cause abdominal pain and high fever. This disease is usually cured by gently hitting the person affected with malunggay by and guyabano leaves. In cases involving infants, the person causing the rash is sought out and told to smear his or her saliva like medicine on the child's forehead or stomach. When you are sick, you suddenly feel dizzy and shaky or suddenly have a stomach ache. The 'spell' will be broken by countering it. Often, the inexplicably ill will wake up soon after, as if nothing had happened and feel sick (Odon, 2015).
@@ -302,23 +543,39 @@ According to a mantatako (healer) who was interviewed, the An-annong is more dan
 
         <script>
             // script.js
-            function openDropdown(dropdownId) {
+            function openDropdown(dropdownId, sectionId) {
                 let dropdown = document.getElementById(dropdownId);
                 if (dropdown.style.display === "block") {
                     dropdown.style.display = "none";
                 } else {
                     dropdown.style.display = "block";
                 }
+                scrollToContent(sectionId);
             }
 
-            function scrollToContent(elementId) {
-                const element = document.getElementById(elementId);
-                element.scrollIntoView({ behavior: 'smooth' });
+            function scrollToContent(sectionId) {
+                var element = document.getElementById(sectionId);
+                var eleHeight = element.offsetTop
+                var navHeight = document.querySelector('nav').offsetHeight;
+                var h2Height = document.querySelector('h2').offsetHeight;
+                var pHeight = document.querySelector('p').offsetHeight;
+                var topH = eleHeight + navHeight - pHeight - h2Height - 25;
+                window.scrollTo({ top: (25+eleHeight), behavior: 'smooth' });
 
+                // window.scrollTo({ top: 100, behavior: 'smooth' });
             }
+
+            // const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+            //     dropdownLinks.forEach(link => {
+            //     link.addEventListener('click', () => {
+            //         const sectionId = link.getAttribute('href').slice(1);
+            //         openDropdown(link.closest('.dropdown-btn').nextElementSibling.id, link.textContent.toLowerCase(), sectionId);
+            //     });
+            // });
 
             function goHome() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                
             }
 
             // Add event listeners for the dropdown links
@@ -339,7 +596,7 @@ According to a mantatako (healer) who was interviewed, the An-annong is more dan
 
             search.addEventListener('input', () => {
                 const query = search.value.toLowerCase();
-                const textElements = body.querySelectorAll('p', 'h2');
+                const textElements = document.querySelectorAll('p', 'h2');
 
                     textElements.forEach(element => {
                         const regex = new RegExp(`(${query})`, 'gi');
