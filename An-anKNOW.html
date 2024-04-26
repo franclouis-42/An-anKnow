@@ -37,6 +37,7 @@
                 left: 10px;
                 height: 47px;
                 width: 55px;
+                cursor: pointer;
             }
 
             #home-img {
@@ -167,6 +168,38 @@
                 top: 2%;
                 left: 3%;
                 font-family: Arial;
+                margin-top: 5%;
+            }
+
+            #hsection13 {
+                margin-top: 5%;
+            }
+
+            #title{
+                position: relative;
+                left: 41%;
+                font-family: arial;
+                font-size: xxx-large;
+                margin-top: 2%;
+            }
+
+            #title2{
+                position: relative;
+                left: 41%;
+                font-family: arial;
+                font-size: xxx-large;
+                margin-top: -2%;
+            }
+
+            #sep1{
+                position: relative;
+
+            }
+
+            hr.dotted {
+                border-top: 3px dotted #819156;
+                margin-top: 35px;
+                margin-bottom: 35px;
             }
 
             .dHead {
@@ -266,7 +299,7 @@
         <nav>
             <!-- <button class="dropdown-btn" onclick="openDropdown('dropdown')">Dropdown</button> -->
             <div id="dropdown-icon">
-                <img src="pngwing.com.png" id="dropdown-img" onclick="openDropdown('dropdown')">
+                <img src="pngwing.com.png" id="dropdown-img" class="dropbtn" onclick="openDropdown('dropdown')">
             </div>
             <div id="dropdown" class="dropdown-content">
                 <a href="#sep1" onclick="openDropdown('dropdown', 'sep1')">An-annong dahil sa Kaluluwa</a>
@@ -312,10 +345,10 @@
             </div>
 
             <div class="sep", id="sep1">
-
+                <h2 id="title">An-annong</h2>
             </div>
             <section id="section1">
-                <h2>An-annong dahil sa Kaluluwa</h2>
+                <h2 >An-annong dahil sa Kaluluwa</h2>
                 <!-- Content here -->
                 <p>
                     Karamihan sa mga kalahok na nainterbyu ang nagsabing nararanasan ang An-annong dahil sa mga kaluluwang nagpaparamdam sa mga nabubuhay. Posibleng makaranas ng An-annong ang isang tao kahit hindi nito kakilala o kaano-ano ang kaluluwang nagpaparamdam. Ito ay sinusuportahan ng nailagdang libro ni Apostol (2010) na nagsasabing nararanasan ang An-annong pagkatapos ng isang engkwentro sa espiritu ng isang patay na tao.
@@ -507,10 +540,12 @@ Mararahil dito, kadalasang nakikita sa mga pagtitipong Ilokano ang mga sanggol n
             </section>
 
             <div class="sep", id="sep13">
-
+                <!-- <p>Rounded</p> -->
+                <hr class="dotted">
+                <h2 id="title2">An-annong</h2>
             </div>
             <section id="section13">
-                <h2>An-annong caused by spirits</h2>
+                <h2 id="hsection13">An-annong caused by spirits</h2>
                 <!-- Content here -->
                 <p>
                     Most of the participants interviewed said that An-annong is experienced when a living encounters a soul. This is supported by Apostol's published book (2010) which claims to experience An-annong after an encounter with the spirit of a dead person.
@@ -713,18 +748,42 @@ An-anKNOW intends to inform locals and non-locals about An-annong in order to sa
         <script>
             // script.js
             function openDropdown(dropdownId, sectionId) {
-                console.log(dropdownId);
-                console.log(sectionId);
+                // console.log(dropdownId);
+                // console.log(sectionId);
                 
                 var dropdown = document.getElementById(dropdownId);
+                
+                // var ctr = 0;
+
                 console.log(dropdown);
                 if (dropdown.style.display === "block") {
                     dropdown.style.display = "none";
-                } else {
+                }
+                else {
                     dropdown.style.display = "block";
                     scrollToContent(sectionId);
+                    // window.addEventListener("click", function(){
+                    //     console.log("being clicked")
+                    //     dropdown.style.display = "none";
+                    // })
                 }
-                
+            }
+
+            window.onclick = function(event) {
+                console.log("click click")
+                if (!event.target.matches(".dropbtn")) {
+                    console.log("click click click")
+                    dropdown.style.display = "none";
+                    var dropd = document.getElementsByClassName("dropdown-content");
+                    for (var i = 0; i < dropd.length; i++){
+                        var opdrop = dropd[i];
+                        if (opdrop.classList.contains("show")){
+                            opdrop.classList.remove("show");
+                            console.log("click click click click")
+                        }
+                        console.log("click click click click click")
+                    }
+                }
             }
 
             function scrollToContent(sectionId) {
@@ -777,17 +836,7 @@ An-anKNOW intends to inform locals and non-locals about An-annong in order to sa
                 
             }
 
-            // Add event listeners for the dropdown links
-            // const dropdownLinks = document.querySelectorAll('.dropdown-content a');
-            // dropdownLinks.forEach(link => {
-            //     link.addEventListener('click', () => {
-            //         scrollToContent(link.textContent.toLowerCase());
-            //         // Close the dropdown after clicking a link
-            //         alert("hi");
-            //         let dropdown = link.closest('.dropdown-btn').nextElementSibling;
-            //         dropdown.style.display = "none";
-            //     });
-            // });
+            
 
             const search = document.getElementById('search');
             // const main = document.getElementById('main');
